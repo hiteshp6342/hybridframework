@@ -4,7 +4,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,16 +16,19 @@ public class BasePage {
 
 	WebDriver driver;
 	Properties prop;
-	
+	public static String highlight;
+	OptionsManager options;
 	
 	public WebDriver init_driver(String browserName) {
-
+		highlight = prop.getProperty("highlight");
+		options = new OptionsManager(prop);
 		if (browserName.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			driver = new ChromeDriver(options.getChromeOptions());
+			
 		} else if(browserName.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
+			driver= new FirefoxDriver(options.getFirefoxOptions());
 		} else if(browserName.equalsIgnoreCase("edge")) {
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
@@ -36,15 +38,28 @@ public class BasePage {
 		
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		return driver;
 
 	}
 	
 	public Properties init_properties() {
-		Properties prop = new Properties();
-		String filePath = ".\\src\\main\\java\\com\\qa\\swaglabs\\config\\config.properties";
+		 prop = new Properties();
+		 String filePath = null;
+		String env = null;
+		 try {
+			  env = System.getProperty("env");
+			 
+			 if(env.equals("qa")) {
+				 filePath = ".\\src\\main\\java\\com\\qa\\swaglabs\\config\\Qaconfig.properties";
+			 }else if (env.equals("stage")) {
+				 filePath = ".\\src\\main\\java\\com\\qa\\swaglabs\\config\\Stageconfig.properties";
+			 }
+			 
+		} catch (Exception e) {
+			filePath = ".\\src\\main\\java\\com\\qa\\swaglabs\\config\\config.properties";
+		}
+		 
 		try {
 			FileInputStream fp = new FileInputStream(filePath);
 			prop.load(fp);

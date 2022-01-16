@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 import com.qa.swaglabs.base.BasePage;
 import com.qa.swaglabs.page.InventoryPage;
 import com.qa.swaglabs.page.LoginPage;
+import com.qa.swaglabs.utils.SwagLabsConstants;
 import com.qa.swaglabs.utils.Users;
 
 public class InventoryPageTest {
@@ -40,7 +41,7 @@ public class InventoryPageTest {
 	@Test(priority=2)
 	public void verifyInventoryPageTitleTest() {
 		String pageHeaderTitle = inventoryPage.verifyInventoryPageTitle();
-		Assert.assertEquals(pageHeaderTitle, "PRODUCTS");
+		Assert.assertEquals(pageHeaderTitle, SwagLabsConstants.HOME_PAGE_HEADER);
 	}
 	
 	@Test(priority=3)

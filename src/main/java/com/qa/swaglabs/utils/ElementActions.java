@@ -3,15 +3,38 @@ package com.qa.swaglabs.utils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ElementActions {
+import com.qa.swaglabs.base.BasePage;
+
+public class ElementActions extends BasePage{
 
 	WebDriver driver;
-
+	WebDriverWait wait;
+	JavaScriptUtil js;
+	
+	
 	public ElementActions(WebDriver driver) {
 		this.driver = driver;
+		wait = new WebDriverWait(driver,SwagLabsConstants.DEFAULT_TIMEOUT);
+		js = new JavaScriptUtil(driver);
 	}
-
+	
+	public boolean waitForPageTitle(String value) {
+		return wait.until(ExpectedConditions.titleIs(value));
+	}
+	
+	public boolean waitForElementToBePresent(By locator) {
+		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+		return true;
+	}
+	
+	public boolean waitForElementToBeVisible(By locator) {
+		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
+		return true;
+	}
+	
 	public String getPageTitle() {
 		try {
 			return driver.getTitle();
@@ -25,6 +48,9 @@ public class ElementActions {
 		WebElement element = null;
 		try {
 			element = driver.findElement(locator);
+			if(highlight.equals("yes")) {
+				js.flash(element);
+			}
 		} catch (Exception e) {
 			System.out.println("Exception occured while getting web element");
 		}
@@ -68,5 +94,7 @@ public class ElementActions {
 		}
 		return null;
 	}
+	
+
 
 }

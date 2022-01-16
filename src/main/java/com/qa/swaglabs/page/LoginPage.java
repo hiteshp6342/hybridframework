@@ -18,6 +18,7 @@ public class LoginPage extends BasePage{
 	By loginButton = By.id("login-button");
 	By headerLogo = By.cssSelector("div.login_logo");
 	By botLogo = By.cssSelector("div.bot_column");
+	By invalidLoginError = By.cssSelector("div.error-message-container");
 	
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
@@ -43,5 +44,9 @@ public class LoginPage extends BasePage{
 		return new InventoryPage(driver);
 	}
 	
+	public boolean invalidLoginErrorDisplayed() {
+		return elementActions.doIsDisplayed(invalidLoginError);
+	}
+
 
 }

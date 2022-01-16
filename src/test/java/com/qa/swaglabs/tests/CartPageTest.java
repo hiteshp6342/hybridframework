@@ -12,6 +12,7 @@ import com.qa.swaglabs.base.BasePage;
 import com.qa.swaglabs.page.CartPage;
 import com.qa.swaglabs.page.InventoryPage;
 import com.qa.swaglabs.page.LoginPage;
+import com.qa.swaglabs.utils.SwagLabsConstants;
 import com.qa.swaglabs.utils.Users;
 
 public class CartPageTest {
@@ -38,13 +39,13 @@ public class CartPageTest {
 	@Test
 	public void verifyCartPageTitle() {
 		String title = cartPage.getCartPageTitle();
-		Assert.assertEquals(title, "Swag Labs");
+		Assert.assertEquals(title, SwagLabsConstants.LOGIN_PAGE_TITLE);
 	}
 	
 	@Test
 	public void verifyCartPageHeader() {
 		String header = cartPage.getCartPageHeader();
-		Assert.assertEquals(header, "YOUR CART");
+		Assert.assertEquals(header, SwagLabsConstants.CART_PAGE_HEADER);
 	}
 	
 	@Test

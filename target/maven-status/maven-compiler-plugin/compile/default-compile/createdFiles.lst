@@ -1,0 +1,11 @@
+com\qa\swaglabs\tests\CartPageTest.class
+com\qa\swaglabs\page\InventoryPage.class
+com\qa\swaglabs\utils\Users.class
+com\qa\swaglabs\utils\JavaScriptUtil.class
+com\qa\swaglabs\base\BasePage.class
+com\qa\swaglabs\page\LoginPage.class
+com\qa\swaglabs\page\CartPage.class
+com\qa\swaglabs\tests\InventoryPageTest.class
+com\qa\swaglabs\utils\ElementActions.class
+com\qa\swaglabs\tests\LoginPageTest.class
+com\qa\swaglabs\utils\SwagLabsConstants.class

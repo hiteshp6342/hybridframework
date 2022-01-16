@@ -26,6 +26,7 @@ public class InventoryPage {
 	}
 	
 	public String verifyInventoryPageTitle() {
+		elementActions.waitForElementToBePresent(pageHeaderTitle);
 		return elementActions.getElementText(pageHeaderTitle);
 	}
 	
