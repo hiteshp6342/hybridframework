@@ -15,6 +15,17 @@ import com.qa.swaglabs.page.LoginPage;
 import com.qa.swaglabs.utils.SwagLabsConstants;
 import com.qa.swaglabs.utils.Users;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Step;
+import io.qameta.allure.Story;
+
+
+@Epic("Epic 01 - User is able to login into Swag Labs")
+@Feature("Feature 01 - Swag Labs Login")
 public class LoginPageTest {
 	BasePage base;
 	WebDriver driver;
@@ -23,6 +34,7 @@ public class LoginPageTest {
 	Users user;
 
 	@BeforeTest
+	@Description("Setup Before Running Test")
 	public void setup() {
 		base = new BasePage();
 		prop = base.init_properties();
@@ -32,25 +44,41 @@ public class LoginPageTest {
 		user = new Users(prop.getProperty("username"), prop.getProperty("password"));
 	}
 
-	@Test(priority = 1)
+	
+	@Test(priority = 1, description = "Verify Login Page Title")
+	@Description("Verify Login Page Title")
+	@Story ("Story 01 - Verify Login Page")
+	@Step ("Step 1 - user navigates to swag labs login page ")
 	public void verifyLoginPageTitleTest() {
 		String title = loginPage.getLoginPageTitle();
 		Assert.assertEquals(title, SwagLabsConstants.LOGIN_PAGE_TITLE);
 	}
 
-	@Test(priority = 2)
+	@Test(priority = 2, description = "Verify login page header logo is displayed")
+	@Severity(SeverityLevel.MINOR)
+	@Description("Verify login page header logo is displayed")
+	@Story ("Story 01 - Verify Login Page")
+	@Step ("Step 2 - swag labs login page header logo is displayed")
 	public void verifyLoginPageHeaderLogoTest() {
 		boolean headerLogo = loginPage.verifyLoginPageHeaderLogo();
 		Assert.assertTrue(headerLogo);
 	}
 
-	@Test(priority = 3)
+	@Test(priority = 3, description = "Verify login page bot logo is displayed")
+	@Severity(SeverityLevel.TRIVIAL)
+	@Description("Verify login page bot logo is displayed")
+	@Story ("Story 01 - Verify Login Page")
+	@Step ("Step 2 - swag labs login page bot logo is displayed")
 	public void verifyLoginPageBotLogoTest() {
 		boolean botLogo = loginPage.verifyLoginPageBotLogo();
 		Assert.assertTrue(botLogo);
 	}
 
-	@Test(priority = 6)
+	@Test(priority = 6 , description = "Verify login for standard users")
+	@Description("Verify login for standard users")
+	@Story ("Story 04 - Standard user login")
+	@Step ("User tries to login with standard user")
+	@Severity(SeverityLevel.BLOCKER)
 	public void loginTest() {
 		user.setUsername(prop.getProperty("username"));
 		user.setPassword(prop.getProperty("password"));
@@ -73,7 +101,11 @@ public class LoginPageTest {
 		return data;
 	}
 
-	@Test(priority = 4, dataProvider = "getInvalidLoginData")
+	@Test(priority = 4, dataProvider = "getInvalidLoginData", description = "Verify Invalid Login")
+	@Severity(SeverityLevel.NORMAL)
+	@Description("Verify Invalid Login")
+	@Story ("Story 02 - Invalid Login")
+	@Step ("User tries to login with invalid data {0},{1}")
 	public void invalidLoginTest(String username, String password) {
 		user.setUsername(username);
 		user.setPassword(password);
@@ -81,12 +113,15 @@ public class LoginPageTest {
 		Assert.assertTrue(loginPage.invalidLoginErrorDisplayed());
 	}
 
-	@Test(priority = 5,dataProvider = "getAcceptedUsernames")
+	@Test(priority = 5,dataProvider = "getAcceptedUsernames", description = "Verify login for accepted users")
+	@Severity(SeverityLevel.CRITICAL)
+	@Description("Verify login for accepted users")
+	@Story ("Story 03 - Accepted user login")
+	@Step ("User tries to login with accepted users {0},{1}")
 	public void allAcceptedUserTest(String username, String password) {
 		user.setUsername(username);
 		user.setPassword(password);
 		InventoryPage inventoryPage = loginPage.login(user);
-
 		if (username.equals(SwagLabsConstants.PERFORMANCE_USER)) {
 			String header = inventoryPage.verifyInventoryPageTitle();
 			Assert.assertEquals(header, SwagLabsConstants.HOME_PAGE_HEADER);

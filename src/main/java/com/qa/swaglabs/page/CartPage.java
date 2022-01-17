@@ -31,6 +31,10 @@ public class CartPage {
 		return elementActions.doIsDisplayed(checkoutButton);
 	}
 	
+	public CheckoutStepOnePage goToCheckoutStepOne() {
+		elementActions.doClick(checkoutButton);
+		return new CheckoutStepOnePage(driver);
+	}
 	
 
 }

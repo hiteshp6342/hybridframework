@@ -1,29 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="12" passed="12" failed="0" skipped="0">
+<testng-results ignored="0" total="23" passed="23" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-01-15T21:27:38 EST" name="Default suite" finished-at="2022-01-15T21:27:43 EST" duration-ms="5407">
+  <suite started-at="2022-01-16T22:58:11 EST" name="My Test Suite" finished-at="2022-01-16T22:58:29 EST" duration-ms="18212">
     <groups>
     </groups>
-    <test started-at="2022-01-15T21:27:38 EST" name="Default test" finished-at="2022-01-15T21:27:43 EST" duration-ms="5407">
-      <class name="com.qa.swaglabs.tests.LoginPageTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.swaglabs.tests.LoginPageTest@2053d869]" started-at="2022-01-15T21:27:38 EST" name="setup" finished-at="2022-01-15T21:27:40 EST" duration-ms="2458" status="PASS">
+    <test started-at="2022-01-16T22:58:11 EST" name="My Swag Labs Tests" finished-at="2022-01-16T22:58:29 EST" duration-ms="18212">
+      <class name="com.qa.swaglabs.tests.InventoryPageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.swaglabs.tests.InventoryPageTest@351f2244]" started-at="2022-01-16T22:58:17 EST" name="setup" finished-at="2022-01-16T22:58:19 EST" duration-ms="2019" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyLoginPageTitleTest()[pri:1, instance:com.qa.swaglabs.tests.LoginPageTest@2053d869]" started-at="2022-01-15T21:27:40 EST" name="verifyLoginPageTitleTest" finished-at="2022-01-15T21:27:40 EST" duration-ms="18" status="PASS">
+        <test-method signature="verifyInventoryPageHeaderLogoTest()[pri:1, instance:com.qa.swaglabs.tests.InventoryPageTest@351f2244]" started-at="2022-01-16T22:58:24 EST" name="verifyInventoryPageHeaderLogoTest" finished-at="2022-01-16T22:58:24 EST" duration-ms="61" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyInventoryPageHeaderLogoTest -->
+        <test-method signature="verifyInventoryPageTitleTest()[pri:2, instance:com.qa.swaglabs.tests.InventoryPageTest@351f2244]" started-at="2022-01-16T22:58:24 EST" name="verifyInventoryPageTitleTest" finished-at="2022-01-16T22:58:24 EST" duration-ms="49" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyInventoryPageTitleTest -->
+        <test-method signature="verifyShoppingCartContainerTest()[pri:3, instance:com.qa.swaglabs.tests.InventoryPageTest@351f2244]" started-at="2022-01-16T22:58:24 EST" name="verifyShoppingCartContainerTest" finished-at="2022-01-16T22:58:24 EST" duration-ms="38" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyShoppingCartContainerTest -->
+        <test-method signature="verifyAddProductToCart()[pri:4, instance:com.qa.swaglabs.tests.InventoryPageTest@351f2244]" started-at="2022-01-16T22:58:24 EST" name="verifyAddProductToCart" finished-at="2022-01-16T22:58:24 EST" duration-ms="109" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAddProductToCart -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.qa.swaglabs.tests.InventoryPageTest@351f2244]" started-at="2022-01-16T22:58:28 EST" name="closeBrowser" finished-at="2022-01-16T22:58:29 EST" duration-ms="624" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- com.qa.swaglabs.tests.InventoryPageTest -->
+      <class name="com.qa.swaglabs.tests.LoginPageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.swaglabs.tests.LoginPageTest@7eb6b6b6]" started-at="2022-01-16T22:58:19 EST" name="setup" finished-at="2022-01-16T22:58:21 EST" duration-ms="1730" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyLoginPageTitleTest()[pri:1, instance:com.qa.swaglabs.tests.LoginPageTest@7eb6b6b6]" started-at="2022-01-16T22:58:21 EST" name="verifyLoginPageTitleTest" description="Verify Login Page Title" finished-at="2022-01-16T22:58:21 EST" duration-ms="180" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyLoginPageTitleTest -->
-        <test-method signature="verifyLoginPageHeaderLogoTest()[pri:2, instance:com.qa.swaglabs.tests.LoginPageTest@2053d869]" started-at="2022-01-15T21:27:40 EST" name="verifyLoginPageHeaderLogoTest" finished-at="2022-01-15T21:27:40 EST" duration-ms="70" status="PASS">
+        <test-method signature="verifyLoginPageHeaderLogoTest()[pri:2, instance:com.qa.swaglabs.tests.LoginPageTest@7eb6b6b6]" started-at="2022-01-16T22:58:21 EST" name="verifyLoginPageHeaderLogoTest" description="Verify login page header logo is displayed" finished-at="2022-01-16T22:58:22 EST" duration-ms="114" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyLoginPageHeaderLogoTest -->
-        <test-method signature="verifyLoginPageBotLogoTest()[pri:3, instance:com.qa.swaglabs.tests.LoginPageTest@2053d869]" started-at="2022-01-15T21:27:40 EST" name="verifyLoginPageBotLogoTest" finished-at="2022-01-15T21:27:40 EST" duration-ms="55" status="PASS">
+        <test-method signature="verifyLoginPageBotLogoTest()[pri:3, instance:com.qa.swaglabs.tests.LoginPageTest@7eb6b6b6]" started-at="2022-01-16T22:58:22 EST" name="verifyLoginPageBotLogoTest" description="Verify login page bot logo is displayed" finished-at="2022-01-16T22:58:22 EST" duration-ms="54" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyLoginPageBotLogoTest -->
-        <test-method signature="invalidLoginTest(java.lang.String,java.lang.String)[pri:4, instance:com.qa.swaglabs.tests.LoginPageTest@2053d869]" started-at="2022-01-15T21:27:40 EST" name="invalidLoginTest" data-provider="getInvalidLoginData" finished-at="2022-01-15T21:27:41 EST" duration-ms="353" status="PASS">
+        <test-method signature="invalidLoginTest(java.lang.String,java.lang.String)[pri:4, instance:com.qa.swaglabs.tests.LoginPageTest@7eb6b6b6]" started-at="2022-01-16T22:58:22 EST" name="invalidLoginTest" description="Verify Invalid Login" data-provider="getInvalidLoginData" finished-at="2022-01-16T22:58:22 EST" duration-ms="393" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -39,7 +65,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidLoginTest -->
-        <test-method signature="invalidLoginTest(java.lang.String,java.lang.String)[pri:4, instance:com.qa.swaglabs.tests.LoginPageTest@2053d869]" started-at="2022-01-15T21:27:41 EST" name="invalidLoginTest" data-provider="getInvalidLoginData" finished-at="2022-01-15T21:27:41 EST" duration-ms="253" status="PASS">
+        <test-method signature="invalidLoginTest(java.lang.String,java.lang.String)[pri:4, instance:com.qa.swaglabs.tests.LoginPageTest@7eb6b6b6]" started-at="2022-01-16T22:58:22 EST" name="invalidLoginTest" description="Verify Invalid Login" data-provider="getInvalidLoginData" finished-at="2022-01-16T22:58:22 EST" duration-ms="289" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -55,7 +81,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidLoginTest -->
-        <test-method signature="invalidLoginTest(java.lang.String,java.lang.String)[pri:4, instance:com.qa.swaglabs.tests.LoginPageTest@2053d869]" started-at="2022-01-15T21:27:41 EST" name="invalidLoginTest" data-provider="getInvalidLoginData" finished-at="2022-01-15T21:27:41 EST" duration-ms="236" status="PASS">
+        <test-method signature="invalidLoginTest(java.lang.String,java.lang.String)[pri:4, instance:com.qa.swaglabs.tests.LoginPageTest@7eb6b6b6]" started-at="2022-01-16T22:58:22 EST" name="invalidLoginTest" description="Verify Invalid Login" data-provider="getInvalidLoginData" finished-at="2022-01-16T22:58:23 EST" duration-ms="257" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -71,7 +97,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidLoginTest -->
-        <test-method signature="invalidLoginTest(java.lang.String,java.lang.String)[pri:4, instance:com.qa.swaglabs.tests.LoginPageTest@2053d869]" started-at="2022-01-15T21:27:41 EST" name="invalidLoginTest" data-provider="getInvalidLoginData" finished-at="2022-01-15T21:27:42 EST" duration-ms="238" status="PASS">
+        <test-method signature="invalidLoginTest(java.lang.String,java.lang.String)[pri:4, instance:com.qa.swaglabs.tests.LoginPageTest@7eb6b6b6]" started-at="2022-01-16T22:58:23 EST" name="invalidLoginTest" description="Verify Invalid Login" data-provider="getInvalidLoginData" finished-at="2022-01-16T22:58:23 EST" duration-ms="298" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -87,7 +113,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidLoginTest -->
-        <test-method signature="invalidLoginTest(java.lang.String,java.lang.String)[pri:4, instance:com.qa.swaglabs.tests.LoginPageTest@2053d869]" started-at="2022-01-15T21:27:42 EST" name="invalidLoginTest" data-provider="getInvalidLoginData" finished-at="2022-01-15T21:27:42 EST" duration-ms="235" status="PASS">
+        <test-method signature="invalidLoginTest(java.lang.String,java.lang.String)[pri:4, instance:com.qa.swaglabs.tests.LoginPageTest@7eb6b6b6]" started-at="2022-01-16T22:58:23 EST" name="invalidLoginTest" description="Verify Invalid Login" data-provider="getInvalidLoginData" finished-at="2022-01-16T22:58:23 EST" duration-ms="273" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -103,7 +129,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidLoginTest -->
-        <test-method signature="allAcceptedUserTest(java.lang.String,java.lang.String)[pri:5, instance:com.qa.swaglabs.tests.LoginPageTest@2053d869]" started-at="2022-01-15T21:27:42 EST" name="allAcceptedUserTest" data-provider="getAcceptedUsernames" finished-at="2022-01-15T21:27:42 EST" duration-ms="268" status="PASS">
+        <test-method signature="allAcceptedUserTest(java.lang.String,java.lang.String)[pri:5, instance:com.qa.swaglabs.tests.LoginPageTest@7eb6b6b6]" started-at="2022-01-16T22:58:23 EST" name="allAcceptedUserTest" description="Verify login for accepted users" data-provider="getAcceptedUsernames" finished-at="2022-01-16T22:58:24 EST" duration-ms="345" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -119,7 +145,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- allAcceptedUserTest -->
-        <test-method signature="allAcceptedUserTest(java.lang.String,java.lang.String)[pri:5, instance:com.qa.swaglabs.tests.LoginPageTest@2053d869]" started-at="2022-01-15T21:27:42 EST" name="allAcceptedUserTest" data-provider="getAcceptedUsernames" finished-at="2022-01-15T21:27:42 EST" duration-ms="326" status="PASS">
+        <test-method signature="allAcceptedUserTest(java.lang.String,java.lang.String)[pri:5, instance:com.qa.swaglabs.tests.LoginPageTest@7eb6b6b6]" started-at="2022-01-16T22:58:24 EST" name="allAcceptedUserTest" description="Verify login for accepted users" data-provider="getAcceptedUsernames" finished-at="2022-01-16T22:58:24 EST" duration-ms="407" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -135,7 +161,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- allAcceptedUserTest -->
-        <test-method signature="allAcceptedUserTest(java.lang.String,java.lang.String)[pri:5, instance:com.qa.swaglabs.tests.LoginPageTest@2053d869]" started-at="2022-01-15T21:27:42 EST" name="allAcceptedUserTest" data-provider="getAcceptedUsernames" finished-at="2022-01-15T21:27:42 EST" duration-ms="106" status="PASS">
+        <test-method signature="allAcceptedUserTest(java.lang.String,java.lang.String)[pri:5, instance:com.qa.swaglabs.tests.LoginPageTest@7eb6b6b6]" started-at="2022-01-16T22:58:24 EST" name="allAcceptedUserTest" description="Verify login for accepted users" data-provider="getAcceptedUsernames" finished-at="2022-01-16T22:58:24 EST" duration-ms="104" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -151,15 +177,110 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- allAcceptedUserTest -->
-        <test-method signature="loginTest()[pri:6, instance:com.qa.swaglabs.tests.LoginPageTest@2053d869]" started-at="2022-01-15T21:27:42 EST" name="loginTest" finished-at="2022-01-15T21:27:43 EST" duration-ms="92" status="PASS">
+        <test-method signature="loginTest()[pri:6, instance:com.qa.swaglabs.tests.LoginPageTest@7eb6b6b6]" started-at="2022-01-16T22:58:24 EST" name="loginTest" description="Verify login for standard users" finished-at="2022-01-16T22:58:24 EST" duration-ms="86" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.qa.swaglabs.tests.LoginPageTest@2053d869]" started-at="2022-01-15T21:27:43 EST" name="closeBrowser" finished-at="2022-01-15T21:27:43 EST" duration-ms="640" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.qa.swaglabs.tests.LoginPageTest@7eb6b6b6]" started-at="2022-01-16T22:58:29 EST" name="closeBrowser" finished-at="2022-01-16T22:58:29 EST" duration-ms="695" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- com.qa.swaglabs.tests.LoginPageTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      <class name="com.qa.swaglabs.tests.CheckoutStepOnePageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.swaglabs.tests.CheckoutStepOnePageTest@51a8313b]" started-at="2022-01-16T22:58:15 EST" name="setup" finished-at="2022-01-16T22:58:17 EST" duration-ms="2319" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="enterCheckoutInformation(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.swaglabs.tests.CheckoutStepOnePageTest@51a8313b]" started-at="2022-01-16T22:58:26 EST" name="enterCheckoutInformation" data-provider="getCustomerData" finished-at="2022-01-16T22:58:27 EST" duration-ms="368" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Hitesh]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Patel]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[07047]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enterCheckoutInformation -->
+        <test-method signature="enterCheckoutInformation(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.swaglabs.tests.CheckoutStepOnePageTest@51a8313b]" started-at="2022-01-16T22:58:27 EST" name="enterCheckoutInformation" data-provider="getCustomerData" finished-at="2022-01-16T22:58:27 EST" duration-ms="323" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Nilesh]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Patel]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[07737]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enterCheckoutInformation -->
+        <test-method signature="enterCheckoutInformation(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.swaglabs.tests.CheckoutStepOnePageTest@51a8313b]" started-at="2022-01-16T22:58:27 EST" name="enterCheckoutInformation" data-provider="getCustomerData" finished-at="2022-01-16T22:58:27 EST" duration-ms="306" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Mitesh]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Patel]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[06636]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enterCheckoutInformation -->
+        <test-method signature="verifyCheckoutStepOneHeader()[pri:0, instance:com.qa.swaglabs.tests.CheckoutStepOnePageTest@51a8313b]" started-at="2022-01-16T22:58:27 EST" name="verifyCheckoutStepOneHeader" finished-at="2022-01-16T22:58:27 EST" duration-ms="41" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCheckoutStepOneHeader -->
+      </class> <!-- com.qa.swaglabs.tests.CheckoutStepOnePageTest -->
+      <class name="com.qa.swaglabs.tests.CartPageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.swaglabs.tests.CartPageTest@5496c165]" started-at="2022-01-16T22:58:11 EST" name="setup" finished-at="2022-01-16T22:58:15 EST" duration-ms="3883" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyCartPageHeader()[pri:0, instance:com.qa.swaglabs.tests.CartPageTest@5496c165]" started-at="2022-01-16T22:58:25 EST" name="verifyCartPageHeader" finished-at="2022-01-16T22:58:25 EST" duration-ms="36" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCartPageHeader -->
+        <test-method signature="verifyCartPageTitle()[pri:0, instance:com.qa.swaglabs.tests.CartPageTest@5496c165]" started-at="2022-01-16T22:58:25 EST" name="verifyCartPageTitle" finished-at="2022-01-16T22:58:25 EST" duration-ms="9" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCartPageTitle -->
+        <test-method signature="verifyCheckoutButtonIsDisplayed()[pri:0, instance:com.qa.swaglabs.tests.CartPageTest@5496c165]" started-at="2022-01-16T22:58:25 EST" name="verifyCheckoutButtonIsDisplayed" finished-at="2022-01-16T22:58:25 EST" duration-ms="57" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCheckoutButtonIsDisplayed -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.qa.swaglabs.tests.CartPageTest@5496c165]" started-at="2022-01-16T22:58:27 EST" name="closeBrowser" finished-at="2022-01-16T22:58:28 EST" duration-ms="641" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- com.qa.swaglabs.tests.CartPageTest -->
+    </test> <!-- My Swag Labs Tests -->
+  </suite> <!-- My Test Suite -->
 </testng-results>
