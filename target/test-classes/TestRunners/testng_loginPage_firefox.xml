@@ -6,8 +6,8 @@
 <listener class-name="com.qa.swaglabs.listeners.ExtentReportListener"></listener>
 </listeners>
 
-  <test name="My Swag Labs Tests - chrome">
-    <parameter name="browser" value="chrome"></parameter>
+  <test name="My Swag Labs Tests - firefox">
+    <parameter name="browser" value="firefox"></parameter>
 	<classes>
    		<class name="com.qa.swaglabs.tests.LoginPageTest"/>
     </classes>
