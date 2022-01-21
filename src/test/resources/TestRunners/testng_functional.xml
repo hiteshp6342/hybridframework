@@ -9,7 +9,8 @@
 
 </listeners>
 
-  <test thread-count="10" name="My Swag Labs Tests">
+  <test name="My Swag Labs Tests">
+	<parameter name="browser" value=""></parameter>
     <classes>
       <class name="com.qa.swaglabs.tests.LoginPageTest"/>
 

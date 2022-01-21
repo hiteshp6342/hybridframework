@@ -35,19 +35,22 @@ public class LoginPageTest {
 	Properties prop;
 	LoginPage loginPage;
 	Users user;
-
+	
 	@BeforeMethod(description = "Setup Before Running Test")
 	@Parameters(value={"browser"})
 	@Description("Setup Before Running Test")
 	public void setup(String browser) {
+		String browserName = null;
 		base = new BasePage();
 		prop = base.init_properties();
 		
-		if(browser.equals(null)) {
-			browser = prop.getProperty("browser");
+		if(browser.equals(null) || browser.equals("") || browser.isEmpty()) {
+			browserName = prop.getProperty("browser");
+		}else {
+			browserName = browser;
 		}
 		
-		driver = base.init_driver(browser);
+		driver = base.init_driver(browserName);
 		driver.get(prop.getProperty("url"));
 		loginPage = new LoginPage(driver);
 		user = new Users(prop.getProperty("username"), prop.getProperty("password"));
