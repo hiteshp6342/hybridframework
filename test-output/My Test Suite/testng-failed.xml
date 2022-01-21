@@ -6,7 +6,6 @@
     <listener class-name="com.qa.swaglabs.listeners.ExtentReportListener"/>
   </listeners>
   <test thread-count="5" name="My Swag Labs Tests(failed)">
-    <parameter name="browser" value=""/>
     <classes>
       <class name="com.qa.swaglabs.tests.LoginPageTest">
         <methods>
