@@ -10,9 +10,7 @@
   <test thread-count="10" name="My Swag Labs Tests">
     <classes>
       <class name="com.qa.swaglabs.tests.LoginPageTest"/>
-      <class name="com.qa.swaglabs.tests.InventoryPageTest"/>
-      <class name="com.qa.swaglabs.tests.CartPageTest"/>
-	<class name="com.qa.swaglabs.tests.CheckoutStepOnePageTest"/>
+
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

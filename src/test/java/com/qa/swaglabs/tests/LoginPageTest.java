@@ -4,9 +4,12 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.qa.swaglabs.base.BasePage;
@@ -33,12 +36,18 @@ public class LoginPageTest {
 	LoginPage loginPage;
 	Users user;
 
-	@BeforeTest
+	@BeforeMethod(description = "Setup Before Running Test")
+	@Parameters(value={"browser"})
 	@Description("Setup Before Running Test")
-	public void setup() {
+	public void setup(String browser) {
 		base = new BasePage();
 		prop = base.init_properties();
-		driver = base.init_driver(prop.getProperty("browser"));
+		
+		if(browser.equals(null)) {
+			browser = prop.getProperty("browser");
+		}
+		
+		driver = base.init_driver(browser);
 		driver.get(prop.getProperty("url"));
 		loginPage = new LoginPage(driver);
 		user = new Users(prop.getProperty("username"), prop.getProperty("password"));
@@ -68,7 +77,7 @@ public class LoginPageTest {
 	@Severity(SeverityLevel.TRIVIAL)
 	@Description("Verify login page bot logo is displayed")
 	@Story ("Story 01 - Verify Login Page")
-	@Step ("Step 2 - swag labs login page bot logo is displayed")
+	@Step ("Step 3 - swag labs login page bot logo is displayed")
 	public void verifyLoginPageBotLogoTest() {
 		boolean botLogo = loginPage.verifyLoginPageBotLogo();
 		Assert.assertTrue(botLogo);
@@ -136,7 +145,7 @@ public class LoginPageTest {
 
 	}
 
-	@AfterTest
+	@AfterMethod
 	public void closeBrowser() {
 		driver.quit();
 	}

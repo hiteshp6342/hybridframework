@@ -1,15 +1,18 @@
 package com.qa.swaglabs.base;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.ITestContext;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -20,27 +23,34 @@ public class BasePage {
 	public static String highlight;
 	OptionsManager options;
 	
+	public static ThreadLocal<WebDriver> tldriver = new ThreadLocal<WebDriver>();
+	
+	public static synchronized WebDriver getDriver() {
+		return tldriver.get();
+	}
+	
+	
 	public WebDriver init_driver(String browserName) {
 		highlight = prop.getProperty("highlight");
 		options = new OptionsManager(prop);
 		if (browserName.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver(options.getChromeOptions());
+			tldriver.set(new ChromeDriver(options.getChromeOptions()));
 			
 		} else if(browserName.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
-			driver= new FirefoxDriver(options.getFirefoxOptions());
+			tldriver.set(new FirefoxDriver(options.getFirefoxOptions()));
 		} else if(browserName.equalsIgnoreCase("edge")) {
 			WebDriverManager.edgedriver().setup();
-			driver = new EdgeDriver();
+			tldriver.set(new EdgeDriver());
 		}else {
 			System.out.println("Browser " + browserName + " is not valid, please enter valid browser name");
 		}
 		
-		driver.manage().deleteAllCookies();
-		driver.manage().window().maximize();
+		getDriver().manage().deleteAllCookies();
+		getDriver().manage().window().maximize();
 		
-		return driver;
+		return getDriver();
 
 	}
 	
@@ -73,6 +83,24 @@ public class BasePage {
 		return prop;
 	
 		
+	}
+	
+	public String getScreenshot() {
+		File src = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
+		String path = System.getProperty("user.dir")+"/screenshots/"+System.currentTimeMillis() +".png";
+		
+		File target = new File(path);
+		try {
+			FileUtils.copyFile(src, target);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return path;
+		
+		
+
 	}
 
 }

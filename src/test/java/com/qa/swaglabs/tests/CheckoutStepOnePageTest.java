@@ -4,6 +4,7 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -56,6 +57,11 @@ public class CheckoutStepOnePageTest {
 	@Test(dataProvider = "getCustomerData")
 	public void enterCheckoutInformation(String firstName, String lastName, String zipcode) {
 		chkOutStepOne.fillCustomerInformation(firstName, lastName, zipcode);
+	}
+	
+	@AfterTest
+	public void closeBrowser() {
+		driver.quit();
 	}
 
 }
