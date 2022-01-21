@@ -7,7 +7,7 @@
 </listeners>
 
   <test name="My Swag Labs Tests - chrome">
-    <parameter name="browser" value="chrome"></parameter>
+    <parameter name="browser" value="firefox"></parameter>
 	<classes>
    		<class name="com.qa.swaglabs.tests.LoginPageTest"/>
     </classes>
